@@ -1,0 +1,52 @@
+
+.container-brand{
+    
+    display: flex; 
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    width:1000px;
+   
+}
+.Brand-Title{
+    justify-content: center;
+    flex:2;
+ }
+.TopBrand {
+    flex:2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    grid-gap: 40px;
+    max-width: 100%; /* Limit the maximum width of the grid container */
+    justify-content: left;
+    margin: 5% 5%;
+    padding-left: 22px;
+    padding-top: 0%;
+    background-color: var(--background-color);
+    padding: 2%;
+
+  }
+  .TopBrand img{
+
+    border: 1px solid #000;
+    padding: 12%;
+    cursor: pointer;
+    border-radius: 3px;
+ }
+
+.Brand{
+
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 5px;
+   row-gap: 5px;
+   align-items: center;
+   width: 100%;
+   padding-left: 40%;
+   
+
+}
+.brandStyle{
+
+  text-decoration: none;
+   color: #000;
+}

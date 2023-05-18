@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+
+
+  padding: 0;
+  margin: 0;
+}
+:root{
+
+  --font-family:--Arial, Helvetica, sans-serif;
+
+
+  --Category-color: rgb(240, 241, 238);
+  --SignIn-color:rgb(176, 28, 28); 
+
+  --background-color:#F6F1F1;
+  --dark-background-color:#AFD3E2;
+  --font-color:#19A7CE;
+  --dark-blue:#146C94;
+
+
+}

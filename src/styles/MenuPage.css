@@ -1,0 +1,47 @@
+
+#product_image{
+    margin-top: 100px;
+    border-radius: 15px;
+  
+}
+.items{
+    text-align: left;
+}
+.stockCounter input {
+    width: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0rem 0.5rem;
+    height: 39px;
+    border-radius: 9px;
+  }
+.stockCounter button{
+    border-radius: 22px;
+    background-color: rgb(244, 105, 35);
+    border: none;
+
+}
+.stockCounter button:hover{
+
+    background-color: rgb(211, 102, 48); ;
+}
+.btn-danger {
+
+    width: 37px;
+}
+.btn-primary{
+
+    width:37px;
+}
+
+#review_btn{
+
+    border-radius: 22px;
+    background-color: rgb(244, 105, 35);
+    border: none;
+}
+#review_btn:hover{
+
+    background-color: rgb(211, 102, 48); ;
+}
+  

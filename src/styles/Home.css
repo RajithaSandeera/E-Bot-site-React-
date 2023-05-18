@@ -1,0 +1,253 @@
+
+.menu {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 20px 12px;
+    
+  }
+
+  .menu .menuTitle {  
+    font: var(--font-family);
+    font-size: 30px;
+  }
+  
+  .top-title{
+
+    color: var(--dark-blue);
+  }
+.menuList {
+    width: 62vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+    
+   
+  }
+.menuList img{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menuItem {
+    border-radius: 4px;
+    width: 230px;
+    height: 320px;
+    margin: 20px;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+
+.menuItem:hover {
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+
+  .menuItem div {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0px;
+  
+    
+  }
+  
+.link {
+  text-decoration: none;
+  color:black;
+}
+  
+.menuItem h1,
+  .menuItem p {
+
+    margin-top: 20px;
+  }
+
+  .menuTitle{
+
+    color: var();
+  }
+  .menuItem h4 {
+    margin-left: 16px;
+    margin-top: 20px;
+  }
+
+  .category {
+    
+    padding-top: 40px;
+    margin:70px;
+    height: 550px;
+    background: var(--background-color);
+    
+  }
+  .menu-top{
+    margin-top: 0px;
+    padding-top: 40px;
+    margin: 50px 0px 800px;
+    background: var(--background-color);
+    border: 0.25px solid rgb(149, 213, 219);
+    
+  }
+  .FilterContainer p{
+
+    margin-left: 10px;
+    margin: 10px;
+    vertical-align:center;
+    text-align: left;
+    
+      
+    
+  }
+  .FilterContainer-content {
+ 
+    background-color: #f9f9f9;
+    min-width: 160px;
+    border: none;
+    padding: 12px 16px;
+    z-index: 1;
+    margin-top: 6%;
+    border: 0.25px solid rgb(149, 213, 219);
+
+  } 
+  .FilterContainer-content select option{
+
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    text-align: left;
+    
+  }
+ 
+  .FilterContainer-content select:hover option {
+    display: block;
+  }
+ 
+  
+
+
+
+  /* Brand css */
+
+
+  .BrandsFilter{
+
+    background-color: #f9f9f9;
+    padding: 2px;
+    padding-left: 39px;
+    text-align: center;
+    cursor: pointer;
+    border: 0.25px solid rgb(149, 213, 219);
+
+
+  }
+  .BrandsFilter:hover{
+
+    color: var(--dark-blue);
+
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+    z-index: 9999;
+    display: none;
+  }
+
+
+  
+  /* search bar */
+
+  .search {
+    /* width: 400px; */
+    position: relative;
+    display: flex;
+    margin-top: 30px;
+    /* margin-bottom: auto; */
+  }
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    /* height: 40px; */
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+@media only screen and (max-width: 900px) {
+    .menuList {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .menuList {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  
+  

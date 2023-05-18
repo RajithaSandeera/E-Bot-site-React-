@@ -1,0 +1,72 @@
+.Popup{
+    position:fixed;
+    Top:0;
+    left:0;
+    width:100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+
+.Popup-inner{
+
+
+    position: relative;
+    margin: auto;
+    padding: 32px;
+    width: 70%;
+    max-width: 640px;
+    background-color: rgb(242, 246, 249);
+    border-radius: 2px;
+    top:20%;
+}
+
+.Popup-inner h1{
+
+    align-items: center;
+}
+#cart_btn{
+
+    height: 40px;
+}
+#review_btn{
+    height: 40px;
+}
+.Popup-inner .close{
+
+    position:absolute;
+    top:16px;
+    right:16px;
+    border: none;
+    background: aliceblue;
+    font-size:1.4em;
+}
+.modal-body{
+
+   align-content: center;
+
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    size: 50px;
+  }
+
+.Review-Btn{
+
+    border-radius: 22px;
+    border: none;
+    width:100px;
+    align-content: center;
+    height: 40px;
+    background-color: rgb(212, 133, 30);
+}
+
+.Review-Btn:hover{
+
+    background-color: rgb(183, 118, 32);
+}
