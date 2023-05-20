@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrandList }  from '../helpers/BrandList';
-import { MenuList } from '../helpers/MenuList';
 import '../styles/Brands.css';
 import { Link } from 'react-router-dom';
 
 function Brands() {
   return (
-    <div>
+    <div className='brandCard'>
         <div className='container-brand'>
         <div className='Brand-Title'>
             <p>Top Brands</p>
@@ -14,8 +13,7 @@ function Brands() {
             <div className='TopBrand'>
            
                 {BrandList.map((item)=>(
-                        <Link key={item} to={`/${item.BrandName}`} className="brandStyle{
-                          ">
+                        <Link key={item} to={`/product/${btoa(item.BrandName)}`} className="brandStyle">
                              <div key={item} >   
                             {<img src={item.BrandImage} alt="brandImage" width="150px"></img>}
                            

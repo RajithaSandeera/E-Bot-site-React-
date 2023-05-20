@@ -23,7 +23,7 @@ function App() {
           <Routes>
             
               <Route path='/' exact element={<Home  authorized={true} />}></Route>
-              <Route path='/:brand' exact element={<BrandShow />}></Route>
+              <Route path='/product/:brand' exact element={<BrandShow />}></Route>
               <Route path='/Contact'  element={<Contact/>}></Route>
               <Route path='/Login' exact element={<Authentication/>}></Route>
               <Route path='/MenuItems/:name' exact element={<MenuPage/>}></Route>
