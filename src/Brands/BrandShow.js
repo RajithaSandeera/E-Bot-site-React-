@@ -4,42 +4,47 @@ import { MenuList } from "../helpers/MenuList";
 import { useState } from "react";
 import { BsListTask } from "react-icons/bs";
 import "../styles/Home.css";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Brands from "../pages/Brands";
 import { useParams } from "react-router-dom";
 import { BsSearch } from 'react-icons/bs';
 
-function Home( ) {
-
-  const [filterDropValue, setFilterDropValue] = useState("");
-  const [filterFinal, setFilterFinal] = useState("");
+function Home() {
   const [urlFilteredProduct, setUrlFilteredProduct] = useState(MenuList);
   const { brand } = useParams();
+  const [filterDropValue, setFilterDropValue] = useState('All');
+  const [filterFinal, setFilterFinal] = useState([]);
 
-      console.log(brand);
-      useEffect(() => {
-        console.log("useEffect working", brand);
-        filtering(atob(brand));
-        console.log("useEffect working two", atob(brand));
-      }, [brand]);
 
-      const filtering = (arg) => {
-        const filteredProduct = MenuList.filter((item) => item.brand === arg);
-        setUrlFilteredProduct(filteredProduct);
 
-        const dropDownFilter = MenuList.filter(
-          (item) => item.fullname === filterDropValue
-        );
-        setFilterFinal(dropDownFilter);
-      };
+  useEffect(() => {
+    filtering(atob(brand));
+  }, [brand]);
 
-      let onFilterFunction = (event) => {
-        const value = event.target.value;
+  useEffect(() => {
+    dropDownFilter();
+  }, [filterDropValue, urlFilteredProduct]);
 
-        setFilterDropValue(value === "all" ? "" : value);
-        console.log(value);
-      };
+  const filtering = (arg) => {
+    const filteredProduct = MenuList.filter((item) => item.brand === arg);
+    setUrlFilteredProduct(filteredProduct);
+  };
 
+    const dropDownFilter = () => {
+   const dropDownFilter = urlFilteredProduct.filter((item) => item.fullname === filterDropValue);
+    setFilterFinal(dropDownFilter);
+    
+  };
+
+   console.log("final:", filterFinal); // Added console.log here
+ 
+
+  let onFilterFunction = (event) => {
+    const value = event.target.value;
+    setFilterDropValue(value);
+  };
+
+  const filteredItems = filterFinal.length > 0 ? filterFinal : urlFilteredProduct;
   return (
     <div>
       <div className="">
@@ -61,7 +66,7 @@ function Home( ) {
               </div>
               <div className="FilterContainer-content">
                 <select onChange={onFilterFunction}>
-                  <option value="all">All</option>
+                  <option value="All">All</option>
 
                   {urlFilteredProduct.map((item) => (
                     <option value={item.fullname}>{item.fullname}</option>
@@ -72,17 +77,16 @@ function Home( ) {
           </div>
 
           <div className="col-8 pt-3">
-          <div className="input-group">
-            
-            <div class="wrap">
-              <div class="search">
-                <input type="text" class="searchTerm" placeholder="What are you looking for?" />
-                <button type="submit" class="searchButton">
-                  <BsSearch/>
-                </button>
+            <div className="input-group">
+              <div class="wrap">
+                <div class="search">
+                  <input type="text" class="searchTerm" placeholder="What are you looking for?" />
+                  <button type="submit" class="searchButton">
+                    <BsSearch/>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
 
             <div className="menu-top border rounded">
               <div className="menuBrand">
@@ -90,30 +94,26 @@ function Home( ) {
                   <h1 className="menuTitle">Our Menu</h1>
 
                   <div className="menuList">
-                    {urlFilteredProduct.map((item, index) => {
+                    {filteredItems.map((item, index) => {
                       const filter = filterFinal[index];
 
                       return(
-                         <Link
-                        key={`${item.fullname}-${index}`} // Append index value to ensure uniqueness
-                        to={`/MenuItems/${item.fullname}`}
-                        className="link"
-                      >
-                        <Menu
-                          image={item.image}
-                          price={item.price}
-                          name={item.fullname}
-                          filter={filter}
-                        />
-                      </Link>
-                      )})}
+                        <Link
+                          key={`${item.fullname}-${index}`} // Append index value to ensure uniqueness
+                          to={`/MenuItems/${item.fullname}`}
+                          className="link"
+                        >
+                          <Menu
+                            image={item.image}
+                            price={item.price}
+                            name={item.fullname}
+                            filter={filter}
+                          />
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
-              </div>
-
-              <div className="grid-container">
-                <div>1</div>
-                <div>2</div>
               </div>
             </div>
           </div>

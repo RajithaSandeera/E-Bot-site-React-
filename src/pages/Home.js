@@ -19,10 +19,9 @@ function Home() {
   }, [filterDropValue]);
 
   const filtering = () => {
-    const dropDownFilter = MenuList.filter(
-      (item) => item.fullname === filterDropValue
-    );
+    const dropDownFilter = MenuList.filter( (item) => item.fullname === filterDropValue);
     filterDropValue === "All" ? setDropValue(MenuList) : setDropValue(dropDownFilter)
+    // console.log("filtered value",dropValue);
     }
   let onFilterFunction = (event) => {
     const value = event.target.value;
