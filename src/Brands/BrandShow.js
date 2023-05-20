@@ -17,13 +17,14 @@ function Home() {
 
 
 
-  useEffect(() => {
-    filtering(atob(brand));
-  }, [brand]);
+  // useEffect(() => {
+   
+  // }, [brand]);
 
   useEffect(() => {
+    filtering(atob(brand));
     dropDownFilter();
-  }, [filterDropValue, urlFilteredProduct]);
+  }, [brand,filterDropValue, urlFilteredProduct]);
 
   const filtering = (arg) => {
     const filteredProduct = MenuList.filter((item) => item.brand === arg);
@@ -95,8 +96,6 @@ function Home() {
 
                   <div className="menuList">
                     {filteredItems.map((item, index) => {
-                      const filter = filterFinal[index];
-
                       return(
                         <Link
                           key={`${item.fullname}-${index}`} // Append index value to ensure uniqueness
@@ -107,7 +106,7 @@ function Home() {
                             image={item.image}
                             price={item.price}
                             name={item.fullname}
-                            filter={filter}
+                            
                           />
                         </Link>
                       );
